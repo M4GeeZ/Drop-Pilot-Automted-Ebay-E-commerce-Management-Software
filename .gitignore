@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+data/*
+!data/.gitkeep
+google-key.json
+.env
+*.xlsx
+.env.*
+!.env.example
+*.sqlite3*
+.vercel/

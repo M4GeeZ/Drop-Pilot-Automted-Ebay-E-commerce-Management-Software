@@ -1,0 +1,8 @@
+data/
+*.sqlite3
+*.xlsx
+.env
+.env.*
+google-key.json
+.venv/
+__pycache__/
