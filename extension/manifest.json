@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "DropPilot Research Capture",
+  "version": "1.1.0",
+  "description": "Send reviewed product details to your DropPilot workspace.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "DropPilot Capture"
+  }
+}

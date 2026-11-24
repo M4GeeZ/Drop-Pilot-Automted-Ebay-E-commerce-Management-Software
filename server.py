@@ -225,7 +225,7 @@ class Handler(BaseHTTPRequestHandler):
             if not path.startswith('/api/'):
                 files={'/':('index.html','text/html; charset=utf-8'),'/app.js':('app.js','text/javascript; charset=utf-8'),'/style.css':('style.css','text/css; charset=utf-8'),'/favicon.svg':('favicon.svg','image/svg+xml')}
                 if path not in files:return self.send_data(404,{'error':'Not found'})
-                f,t=files[path];return self.send_data(200,(ROOT/'static'/f).read_bytes(),t)
+                f,t=files[path];return self.send_data(200,(ROOT/('web_assets' if (ROOT/'web_assets').is_dir() else 'static')/f).read_bytes(),t)
             if method=='GET':
                 with db() as c:
                     if path=='/api/bootstrap':return self.send_data(200,{'token':TOKEN,'accounts':[dict(r) for r in c.execute('SELECT id,name,demo FROM accounts ORDER BY rowid')],'fields':FIELDS,'derived':list(DERIVED),'cloud':CLOUD,'auth':AUTH_REQUIRED})
